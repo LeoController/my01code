@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
+Route::get('/indexhere', function () {
     return view('welcome');
 });
