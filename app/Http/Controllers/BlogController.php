@@ -33,4 +33,10 @@ class BlogController extends Controller
 
         return view('show_blog', compact('blog'));
     }
+
+    public function edit($id){
+        $blog=Blog::findOrFail($id);
+
+        return view('edit_blog', compact('blog'));
+    }
 }

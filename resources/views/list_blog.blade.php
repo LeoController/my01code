@@ -15,6 +15,6 @@
         <p>{{ $blog->content }}</p>
         <i>{{ $blog->author }}</i> 
     </div>
-    <a href="/blog/{{ $blog->id }}">အသေးစိတ်ကြည့်ရန်</a>
+    <a href="/blog/{{ $blog->id }}">အသေးစိတ်ကြည့်ရန်</a> | <a href="/blog/{{ $blog->id }}/edit">Blog အချက်အလက်များပြင်ဆင်ရန်</a>
     <hr>
 @endforeach
