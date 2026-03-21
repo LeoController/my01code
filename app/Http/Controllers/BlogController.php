@@ -34,9 +34,29 @@ class BlogController extends Controller
         return view('show_blog', compact('blog'));
     }
 
+    public function destory($id){
+        $blog=Blog::findOrFail($id);
+
+        $blog->delete();
+        
+        return redirect('/')->with('success','Blog ပြင်ဆင်ပြီးပါပြီ။');
+    }
+
     public function edit($id){
         $blog=Blog::findOrFail($id);
 
         return view('edit_blog', compact('blog'));
+    }
+
+    public function update(Request $request, $id){
+        $blog=Blog::findOrFail($id);
+
+        $blog->update([
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'author'=>$request->author,
+        ]);
+
+        return redirect('/')->with('success','Blog ပြင်ဆင်ပြီးပါပြီ။');
     }
 }
