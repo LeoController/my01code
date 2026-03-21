@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [BlogController::class, 'list']);
+
 Route::get('/create', [BlogController::class,'create']);
 
 Route::post('/store', [BlogController::class, 'store']);
+
+Route::get('/blog/{id}',[BlogController::class, 'show']);

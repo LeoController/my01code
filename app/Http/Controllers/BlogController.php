@@ -19,6 +19,18 @@ class BlogController extends Controller
             'author' => $request->author,
         ]);
 
-        return redirect('/create')->with('success','Blog တင်တာအောင်မြင်ပါသည်။');
+        return redirect('/')->with('success','Blog တင်တာအောင်မြင်ပါသည်။');
+    }
+
+    public function list(){
+        $blogs=Blog::latest()->get();
+
+        return view('list_blog',compact('blogs'));
+    }
+
+    public function show($id){
+        $blog=Blog::findOrFail($id);
+
+        return view('show_blog', compact('blog'));
     }
 }
